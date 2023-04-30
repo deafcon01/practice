@@ -1,5 +1,10 @@
+"""
+Given a board place queens on each row such that they dont attack each other.
+"""
 def validCell( board, newrow, newcol, size):
-    valid=True
+    """
+    Need to check uuper half for straight and diagonals
+    """
     for i in range(size):
         if board[i][newcol]:
             return False
@@ -9,7 +14,7 @@ def validCell( board, newrow, newcol, size):
     for i,j in zip(range(newrow, -1, -1), range(newcol, size, 1)):
         if board[i][j]:
             return False
-    return valid
+    return True
 
 def NQueen(board, size:int, row:int):
     if row==size-1:

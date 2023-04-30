@@ -1,6 +1,19 @@
+"""
+In a maze, you are given STARTING and ENDING points, need to find a path from starting to destination.
+"""
+# Moves
 pathrow = [0,0,1,-1]
 pathcol = [1,-1,0,0]
 def ratmaze(maze:list[list[int]], visited, row, col, destrow, destcol, move):
+    """
+    maze: 1 is possible to access, 0 is bloced
+    visited: to mark visited blocks
+    row: start row position
+    col: start col position
+    destrow: dest row position
+    destcol: dest col position
+    move:
+    """
     if row==destrow and col==destcol:
         for i in range(4):
             for j in range(4):

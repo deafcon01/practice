@@ -29,13 +29,26 @@ class BinaryTree:
         values = []
         queue = [root]
         while len(queue):
-            current = queue.pop(0)
+            current = queue.pop(0) #important
             values.append(current.value)
             if current.left:
                 queue.append(current.left)
             if current.right:
                 queue.append(current.right)
         return values
+
+    def heightBinaryTree(self, root:Node)-> int:
+        """
+        T: O(n) visiting each node once
+        S: O(n) in worst case all element will be in stack
+        """
+        if not root:
+            return 0
+        lh = self.heightBinaryTree(root.left)
+        rh = self.heightBinaryTree(root.right)
+        height=  max(lh, rh)+1
+        return height
+
 
 if __name__ == "__main__":
     root = Node(1)
@@ -46,3 +59,4 @@ if __name__ == "__main__":
     obj = BinaryTree()
     obj.DFS(root)
     print(obj.BFS(root))
+    print(f"height of binary tree: {obj.heightBinaryTree(root)}")

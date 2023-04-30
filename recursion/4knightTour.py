@@ -1,3 +1,8 @@
+"""
+Knight(horse): Can knight move in a way it visit all cells in chess board.
+Cannot travers a cell again.
+Cannot go outside board
+"""
 pathrow = [2,1,-1,-2,-2,-1,1,2]
 pathcol = [1,2,2,1,-1,-2,-2,-1]
 
@@ -39,3 +44,4 @@ if __name__ == '__main__':
     ]
     visited[0][0] = 1
     knighttour(visited, 0,0,1)
+    knighttour(visited, 0,1,1)

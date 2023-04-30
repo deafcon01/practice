@@ -1,3 +1,9 @@
+"""
+Given a dictionary, a method to do lookup in dictionary and a MxN board where
+every cell has one character. Find all possible work that can be formed by a 
+sequence of adjacent charcaters. 
+word should not have multiple instance of same cell.
+"""
 pathrow = [0,0,1,1,-1,1,-1,-1]
 pathcol = [1,-1,-1,1,1,0,0,-1]
 def boggle(board, visited, row, col, word, dictionary):

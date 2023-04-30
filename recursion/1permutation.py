@@ -1,4 +1,13 @@
+"""
+Print all permutation of the string.
+"""
 def permutation(input:list, result:list, count:list, level:int):
+    """
+    level: result list index position
+    count: to check if char is visited
+    result: to print permutation
+    input: input list
+    """
     if level== len(input):
         print(result)
     for i in range(len(input)):
@@ -10,4 +19,4 @@ def permutation(input:list, result:list, count:list, level:int):
         count[i]+=1
     
 if __name__ == '__main__':
-    permutation(['a','b','c'],[None, None, None], [1,1,1], 0)
+    permutation(['a','b','c','d'],[None, None, None, None], [1,1,1,1], 0)

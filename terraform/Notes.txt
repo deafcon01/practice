@@ -1,0 +1,9 @@
+1. Create a VPC
+2. Create Internet Gateway to access outside world
+3. Create Custom route table
+4. Create a subnet
+5. Associate subnet with route table
+6. Create security group to allow port 22, 80,443
+7. Create a network i/f with ip in subnet 
+8. Assign elastic ip to network i/f
+9. Create ubuntu server and install apache2 

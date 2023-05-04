@@ -1,0 +1,7 @@
+Errichto
+
+when to use dp?
+- counting something, often number of ways (Combinatorics)
+- minimize or maximize certain value (optimize)
+- Yes/No questions. (possible)
+

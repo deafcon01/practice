@@ -6,9 +6,32 @@ metadata:
     app: nginx
     env: sandbox
 spec:
+  securityContext:
+    runAsUser: 1000
   containers:
     - name: nginx
       image: nginx
       env:
         - name: NGINX_PORT
           value: "8080"
+      securityContext:
+        runAsUser: 1000 
+        capabilities: #Only at container level
+          add: ["MAC_ADMIN"]
+      resources:
+        requests:
+          memory: "1Gi"
+          cpu: 0.5
+        limits:
+          memory: "2Gi"
+          cpu: 2
+  serviceAccountName: my-serviceaccount # when not using default service account of that ns
+  tolerations:
+    - key: "app"
+      operator: "Equal"
+      value: "blue"
+      effect: "NoSchedule"
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: myclaim

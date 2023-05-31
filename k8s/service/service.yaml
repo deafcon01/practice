@@ -5,9 +5,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - targetPort: 80
-      port: 80
-      nodePort: 30008
+    - targetPort: 80 # port on the pod aap
+      port: 80 # port on the service
+      nodePort: 30008 # port exposed
   selector:
     app: myapp
     type: front-end

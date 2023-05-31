@@ -16,6 +16,10 @@ spec:
       containers:
         - name: nginx-container
           image: nginx
+      volumes:
+      - name: mypd
+        persistentVolumeClaim:
+          claimName: myclaim
   replicas: 3
   selector:
     matchLabels:
